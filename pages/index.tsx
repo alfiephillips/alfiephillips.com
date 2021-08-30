@@ -25,7 +25,7 @@ const Home: NextPage = () => {
     <React.Fragment>
       <Meta
         title="Alfie Phillips"
-        description="Welcome to the website of Alfie Phillips, please contact me on my email: mail@alfiephillips.com"
+        description="Hey baby how you doing."
         url="https://alfiephillips.com"
         keywords="personal website, mail@alfiephillips.com, portfolio"
       />
