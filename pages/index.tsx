@@ -10,8 +10,8 @@ const Home: NextPage = () => {
   const [time, setTime] = useState("00:00:00 PM");
 
   function updateTime() {
-    let current = new Date().toLocaleString("en-GB", {
-      timeZone: "UTC",
+    let current = new Date().toLocaleString("en-US", {
+      timeZone: "Europe/London",
     });
     setTime(current.toUpperCase().slice(-11, -1) + "M");
     setTimeout(updateTime, 1000);
