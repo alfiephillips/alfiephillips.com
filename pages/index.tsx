@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     updateTime();
-  }, [time]);
+  });
 
   return (
     <React.Fragment>
