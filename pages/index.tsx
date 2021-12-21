@@ -14,11 +14,10 @@ import {
 
 import Section from "../components/Section";
 import Paragraph from "../components/Paragraph";
+import Technology from "../components/Technology";
 import { BioSection, BioYear } from "../components/Bio";
-import Technologies from "../components/Technology";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import Technology from "../components/Technology";
 
 const Home: NextPage = () => {
     return (
