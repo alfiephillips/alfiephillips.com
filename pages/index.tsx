@@ -49,6 +49,7 @@ const Home: NextPage = () => {
                         display="inline-block"
                         borderRadius="full"
                         src="/images/profile.png"
+                        alt="Profile picture"
                     />
                 </Box>
             </Box>

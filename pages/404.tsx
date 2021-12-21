@@ -13,8 +13,8 @@ const NotFound = () => {
         <Container mt={10}>
             <Heading as="h1">(404) Page Not Found</Heading>
             <Text mt={5}>
-                The page you&apos;re looking for was not found or hasn't been
-                created yet. Please check again later...
+                The page you&apos;re looking for was not found or hasn&apos;t
+                been created yet. Please check again later...
             </Text>
             <Divider my={5} />
 
