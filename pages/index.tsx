@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import React from "react";
 import Meta from "../components/Meta";
 import styles from "../styles/Home.module.css";
@@ -29,10 +27,6 @@ const Home: NextPage = () => {
         url="https://alfiephillips.com"
         keywords="personal website, mail@alfiephillips.com, portfolio"
       />
-      <div className={styles.home__container}>
-        <h1 className={styles.home__container_text}>In Development...</h1>
-        <h3 className={styles.home__container_time}>{time}</h3>
-      </div>
     </React.Fragment>
   );
 };
