@@ -27,7 +27,7 @@ const Home: NextPage = () => {
             <Box display={{ md: "flex" }}>
                 <Box flexGrow={1}>
                     <Heading as="h2" variant="page-title">
-                        Alfie Phillips
+                        Alfie Jay Phillips
                     </Heading>
                     <p>Young Entrepreneur ( Trader / Developer / Gamer )</p>
                 </Box>
