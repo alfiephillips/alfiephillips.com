@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Container, Box, Heading } from "@chakra-ui/react";
+import { Container, Box, Heading, Image } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
 
@@ -30,6 +30,22 @@ const Home: NextPage = () => {
                         Alfie Jay Phillips
                     </Heading>
                     <p>Young Entrepreneur ( Trader / Developer / Gamer )</p>
+                </Box>
+                <Box
+                    flexShrink={0}
+                    mt={{ base: 4, md: 0 }}
+                    ml={{ md: 6 }}
+                    align="center"
+                >
+                    <Image
+                        borderColor="whiteAlpha.800"
+                        borderWidth={2}
+                        borderStyle="solid"
+                        maxWidth="100px"
+                        display="inline-block"
+                        borderRadius="full"
+                        src="/images/profile.png"
+                    />
                 </Box>
             </Box>
         </Container>
