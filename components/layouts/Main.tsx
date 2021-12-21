@@ -1,4 +1,4 @@
-import { Meta, Navbar } from "../index";
+import { Meta, Navbar, Footer } from "../index";
 import { Box, Container } from "@chakra-ui/react";
 
 const Main = ({ children, router }: any) => {
@@ -14,6 +14,7 @@ const Main = ({ children, router }: any) => {
             <Container maxW="container.md" pt={14}>
                 {children}
             </Container>
+            <Footer />
         </Box>
     );
 };

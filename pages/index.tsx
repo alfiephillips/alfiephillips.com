@@ -8,7 +8,10 @@ import {
     Image,
     useColorModeValue,
     Link,
-    Button
+    Button,
+    List,
+    ListItem,
+    Icon
 } from "@chakra-ui/react";
 
 import Section from "../components/Section";
@@ -17,7 +20,12 @@ import Technology from "../components/Technology";
 import { BioSection, BioYear } from "../components/Bio";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, Io } from "react-icons/";
+import {
+    IoLogoTwitter,
+    IoLogoInstagram,
+    IoLogoGithub,
+    IoLogoLinkedin
+} from "react-icons/io5";
 
 const Home: NextPage = () => {
     return (
@@ -164,6 +172,70 @@ const Home: NextPage = () => {
                         </Button>
                     </NextLink>
                 </Box>
+            </Section>
+
+            <Section delay={0.8}>
+                <Heading as="h3" variant="section-title">
+                    On the web
+                </Heading>
+                <List>
+                    <ListItem>
+                        <Link
+                            href="https://www.github.com/alfiephillips"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoGithub} />}
+                            >
+                                @alfiephillips
+                            </Button>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link
+                            href="https://www.twitter.com/alfiejphillips"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoTwitter} />}
+                            >
+                                @alfiejphillips
+                            </Button>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link
+                            href="https://www.linkedin.com/in/alfiephillips/"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoLinkedin} />}
+                            >
+                                @alfiephillips
+                            </Button>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link
+                            href="https://www.instagram.com/alfieephillipss/"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoInstagram} />}
+                            >
+                                @alfieephillipss
+                            </Button>
+                        </Link>
+                    </ListItem>
+                </List>
             </Section>
         </Container>
     );
