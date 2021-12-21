@@ -7,11 +7,13 @@ import {
     Heading,
     Image,
     useColorModeValue,
-    Link
+    Link,
+    Button
 } from "@chakra-ui/react";
 
 import Section from "../components/Section";
 import Paragraph from "../components/Paragraph";
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 const Home: NextPage = () => {
     return (
@@ -63,11 +65,22 @@ const Home: NextPage = () => {
                     real-life problems with the art of code. When he is not
                     programming, he loves to spend time with his friends and try
                     new hobbies such as trading. Currently, he is working on a
-                    product called{" "}
+                    new product for real and virtual work called{" "}
                     <NextLink href="/projects/oberen">
                         <Link>Oberen</Link>
                     </NextLink>
+                    .
                 </Paragraph>
+                <Box align="center" my={4}>
+                    <NextLink href="/projects">
+                        <Button
+                            rightIcon={<ChevronRightIcon />}
+                            colorScheme="teal"
+                        >
+                            My projects
+                        </Button>
+                    </NextLink>
+                </Box>
             </Section>
         </Container>
     );
