@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { Box, Container } from "@chakra-ui/react";
-
+import { ColorModeScript } from "@chakra-ui/react";
+import theme from "../libs/theme";
 class MyDocument extends Document {
     static async getInitialProps(ctx: any) {
         const initalProps = await Document.getInitialProps(ctx);
@@ -31,6 +31,9 @@ class MyDocument extends Document {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <body>
+                    <ColorModeScript
+                        initialColorMode={theme.config.initialColorMode}
+                    />
                     <Main />
                     <NextScript />
                 </body>

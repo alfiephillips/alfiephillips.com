@@ -38,7 +38,7 @@ const Logo = () => {
                         fontWeight="bold"
                         ml={3}
                     >
-                        Takuya Matsuyama
+                        Alfie Jay Phillips
                     </Text>
                 </LogoBox>
             </a>
