@@ -13,6 +13,8 @@ import {
 
 import Section from "../components/Section";
 import Paragraph from "../components/Paragraph";
+import { BioSection, BioYear } from "../components/Bio";
+
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 const Home: NextPage = () => {
@@ -53,7 +55,7 @@ const Home: NextPage = () => {
                     />
                 </Box>
             </Box>
-            <Section delay={0.1}>
+            <Section delay={0.2}>
                 <Heading as="h3" variant="section-title">
                     Work
                 </Heading>
@@ -82,6 +84,37 @@ const Home: NextPage = () => {
                         </Button>
                     </NextLink>
                 </Box>
+            </Section>
+
+            <Section delay={0.4}>
+                <Heading as="h3" variant="section-title">
+                    Timeline
+                </Heading>
+                <BioSection>
+                    <BioYear>2005</BioYear>
+                    Born in Cornwall, England. I grew up with an interest in
+                    computers but never considered programming.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2017</BioYear>
+                    Started programming in secondary school. I used technologies
+                    such as python and html.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2020</BioYear>
+                    Became interested in the career of programming, using tools
+                    such as <b>Codeacademy</b> and <b>FreeCodeCamp</b>.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2021</BioYear>I became a freelance developer and
+                    started to create my own company named <b>Oberen</b>.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2022</BioYear>
+                    The year I begin college. The plan is to improve my
+                    programming skills before attempting to get an
+                    apprenticeship as a Software Engineer.
+                </BioSection>
             </Section>
         </Container>
     );
