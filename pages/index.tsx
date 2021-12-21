@@ -8,8 +8,7 @@ import {
     Image,
     useColorModeValue,
     Link,
-    Button,
-    VStack
+    Button
 } from "@chakra-ui/react";
 
 import Section from "../components/Section";
@@ -18,6 +17,7 @@ import Technology from "../components/Technology";
 import { BioSection, BioYear } from "../components/Bio";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, Io } from "react-icons/";
 
 const Home: NextPage = () => {
     return (
@@ -154,6 +154,16 @@ const Home: NextPage = () => {
                     type="Distributed systems"
                     useCase="Constructing real-time systems that can scale out across multiple nodes."
                 />
+                <Box align="center" my={4}>
+                    <NextLink href="/newsletter">
+                        <Button
+                            rightIcon={<ChevronRightIcon />}
+                            colorScheme="teal"
+                        >
+                            My Newsletter
+                        </Button>
+                    </NextLink>
+                </Box>
             </Section>
         </Container>
     );

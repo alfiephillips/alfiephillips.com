@@ -11,11 +11,13 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-const Projects: NextPage = () => {
+const Newsletter: NextPage = () => {
     return (
-        <Layout title="Projects">
+        <Layout title="Newsletter">
             <Container mt={10}>
-                <Heading as="h1">The Projects page is in development!</Heading>
+                <Heading as="h1">
+                    The Newsletter page is in development!
+                </Heading>
                 <Text mt={5}>
                     I&apos;m currently working on this page. Please check again
                     at a later time!
@@ -32,4 +34,4 @@ const Projects: NextPage = () => {
     );
 };
 
-export default Projects;
+export default Newsletter;
