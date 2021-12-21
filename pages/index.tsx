@@ -65,7 +65,7 @@ const Home: NextPage = () => {
                     real-life problems with the art of code. When he is not
                     programming, he loves to spend time with his friends and try
                     new hobbies such as trading. Currently, he is working on a
-                    new product for real and virtual work called{" "}
+                    new product for real and virtual work called&nbsp;
                     <NextLink href="/projects/oberen">
                         <Link>Oberen</Link>
                     </NextLink>
