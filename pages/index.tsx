@@ -9,7 +9,9 @@ import {
     useColorModeValue,
     Link
 } from "@chakra-ui/react";
+
 import Section from "../components/Section";
+import Paragraph from "../components/Paragraph";
 
 const Home: NextPage = () => {
     return (
@@ -52,7 +54,7 @@ const Home: NextPage = () => {
                 <Heading as="h3" variant="section-title">
                     Work
                 </Heading>
-                <p>
+                <Paragraph>
                     Alfie is a 16 year-old freelance developer based in the
                     South-West of England with a passion for building new
                     innovations. He aspires to become a full-time backend
@@ -65,7 +67,7 @@ const Home: NextPage = () => {
                     <NextLink href="/projects/oberen">
                         <Link>Oberen</Link>
                     </NextLink>
-                </p>
+                </Paragraph>
             </Section>
         </Container>
     );
