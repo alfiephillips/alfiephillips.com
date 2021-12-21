@@ -8,14 +8,17 @@ import {
     Image,
     useColorModeValue,
     Link,
-    Button
+    Button,
+    VStack
 } from "@chakra-ui/react";
 
 import Section from "../components/Section";
 import Paragraph from "../components/Paragraph";
 import { BioSection, BioYear } from "../components/Bio";
+import Technologies from "../components/Technology";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import Technology from "../components/Technology";
 
 const Home: NextPage = () => {
     return (
@@ -115,6 +118,43 @@ const Home: NextPage = () => {
                     programming skills before attempting to get an
                     apprenticeship as a Software Engineer.
                 </BioSection>
+            </Section>
+
+            <Section delay={0.6}>
+                <Heading as="h3" variant="section-title">
+                    Skillset
+                </Heading>
+                <Paragraph>
+                    These are some of my key programming languages which I use
+                    on a day-to-day basis to suit my needs.
+                </Paragraph>
+                <Technology
+                    name={
+                        <NextLink href="https://www.typescriptlang.org/">
+                            <Link>Typescript</Link>
+                        </NextLink>
+                    }
+                    type="An amazing JS Framework"
+                    useCase="Types for Javascript: helps with documentation in your code."
+                />
+                <Technology
+                    name={
+                        <NextLink href="https://www.python.org">
+                            <Link>Python</Link>
+                        </NextLink>
+                    }
+                    type="Object oriented programming"
+                    useCase="A simple language which can achieve any single purpose. The best for beginners."
+                />
+                <Technology
+                    name={
+                        <NextLink href="https://elixir-lang.org/">
+                            <Link>Elixir</Link>
+                        </NextLink>
+                    }
+                    type="Distributed systems"
+                    useCase="Constructing real-time systems that can scale out across multiple nodes."
+                />
             </Section>
         </Container>
     );
