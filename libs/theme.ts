@@ -20,6 +20,12 @@ const components = {
                 textDecorationThickness: 4,
                 marginTop: 3,
                 marginBottom: 4
+            },
+            "technology-title": {
+                fontSize: 14,
+                textUnderlinedOffset: 6,
+                textDecorationColor: "#525252",
+                textDecorationThickness: 4
             }
         }
     },

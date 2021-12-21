@@ -8,12 +8,24 @@ import {
     Image,
     useColorModeValue,
     Link,
-    Button
+    Button,
+    List,
+    ListItem,
+    Icon
 } from "@chakra-ui/react";
 
 import Section from "../components/Section";
 import Paragraph from "../components/Paragraph";
+import Technology from "../components/Technology";
+import { BioSection, BioYear } from "../components/Bio";
+
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import {
+    IoLogoTwitter,
+    IoLogoInstagram,
+    IoLogoGithub,
+    IoLogoLinkedin
+} from "react-icons/io5";
 
 const Home: NextPage = () => {
     return (
@@ -53,7 +65,7 @@ const Home: NextPage = () => {
                     />
                 </Box>
             </Box>
-            <Section delay={0.1}>
+            <Section delay={0.2}>
                 <Heading as="h3" variant="section-title">
                     Work
                 </Heading>
@@ -82,6 +94,148 @@ const Home: NextPage = () => {
                         </Button>
                     </NextLink>
                 </Box>
+            </Section>
+
+            <Section delay={0.4}>
+                <Heading as="h3" variant="section-title">
+                    Timeline
+                </Heading>
+                <BioSection>
+                    <BioYear>2005</BioYear>
+                    Born in Cornwall, England. I grew up with an interest in
+                    computers but never considered programming.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2017</BioYear>
+                    Started programming in secondary school. I used technologies
+                    such as python and html.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2020</BioYear>
+                    Became interested in the career of programming, using tools
+                    such as <b>Codeacademy</b> and <b>FreeCodeCamp</b>.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2021</BioYear>I became a freelance developer and
+                    started to create my own company named <b>Oberen</b>.
+                </BioSection>
+                <BioSection>
+                    <BioYear>2022</BioYear>
+                    The year I begin college. The plan is to improve my
+                    programming skills before attempting to get an
+                    apprenticeship as a Software Engineer.
+                </BioSection>
+            </Section>
+
+            <Section delay={0.6}>
+                <Heading as="h3" variant="section-title">
+                    Skillset
+                </Heading>
+                <Paragraph>
+                    These are some of my key programming languages which I use
+                    on a day-to-day basis to suit my needs.
+                </Paragraph>
+                <Technology
+                    name={
+                        <NextLink href="https://www.typescriptlang.org/">
+                            <Link>Typescript</Link>
+                        </NextLink>
+                    }
+                    type="An amazing JS Framework"
+                    useCase="Types for Javascript: helps with documentation in your code."
+                />
+                <Technology
+                    name={
+                        <NextLink href="https://www.python.org">
+                            <Link>Python</Link>
+                        </NextLink>
+                    }
+                    type="Object oriented programming"
+                    useCase="A simple language which can achieve any single purpose. The best for beginners."
+                />
+                <Technology
+                    name={
+                        <NextLink href="https://elixir-lang.org/">
+                            <Link>Elixir</Link>
+                        </NextLink>
+                    }
+                    type="Distributed systems"
+                    useCase="Constructing real-time systems that can scale out across multiple nodes."
+                />
+                <Box align="center" my={4}>
+                    <NextLink href="/newsletter">
+                        <Button
+                            rightIcon={<ChevronRightIcon />}
+                            colorScheme="teal"
+                        >
+                            My Newsletter
+                        </Button>
+                    </NextLink>
+                </Box>
+            </Section>
+
+            <Section delay={0.8}>
+                <Heading as="h3" variant="section-title">
+                    On the web
+                </Heading>
+                <List>
+                    <ListItem>
+                        <Link
+                            href="https://www.github.com/alfiephillips"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoGithub} />}
+                            >
+                                @alfiephillips
+                            </Button>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link
+                            href="https://www.twitter.com/alfiejphillips"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoTwitter} />}
+                            >
+                                @alfiejphillips
+                            </Button>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link
+                            href="https://www.linkedin.com/in/alfiephillips/"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoLinkedin} />}
+                            >
+                                @alfiephillips
+                            </Button>
+                        </Link>
+                    </ListItem>
+                    <ListItem>
+                        <Link
+                            href="https://www.instagram.com/alfieephillipss/"
+                            target="_blank"
+                        >
+                            <Button
+                                variant="ghost"
+                                colorScheme="teal"
+                                leftIcon={<Icon as={IoLogoInstagram} />}
+                            >
+                                @alfieephillipss
+                            </Button>
+                        </Link>
+                    </ListItem>
+                </List>
             </Section>
         </Container>
     );
