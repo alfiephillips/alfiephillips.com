@@ -10,7 +10,6 @@ const Main = ({ children, router }: any) => {
                 url="https://alfiephillips.com"
                 keywords="personal website, mail@alfiephillips.com, portfolio, software engineer, programming"
             />
-
             <Navbar path={router.asPath} />
             <Container maxW="container.md" pt={14}>
                 {children}
