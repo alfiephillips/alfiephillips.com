@@ -28,8 +28,8 @@ const LinkItem = ({ href, path, _target, children, ...props }: any) => {
         <NextLink href={href} passHref>
             <Link
                 p={2}
-                bg={active ? "grassTeal" : undefined}
-                color={active ? "#202023" : inactiveColor}
+                bg={active ? "#88CCCA" : undefined}
+                color={active ? "black" : inactiveColor}
                 _target={_target}
                 {...props}
             >
@@ -40,7 +40,7 @@ const LinkItem = ({ href, path, _target, children, ...props }: any) => {
 };
 
 const Navbar = (props: Props) => {
-    const { path } = props;
+    const path = props.path;
 
     return (
         <Box
