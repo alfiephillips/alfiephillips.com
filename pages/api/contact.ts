@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { email, subject } = req.body;
 
     const user_email = process.env.USER_EMAIL as string;
@@ -31,7 +31,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     let errorMessage;
     let message;
 
-    transporter.sendMail(mailOptions, (error, info) => {
+    await transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             errorMessage = error.message;
             message = "Failure";
