@@ -20,6 +20,7 @@ const Layout = ({ children, title }: any) => {
             style={{ position: "relative" }}
         >
             <>
+                <GridItemStyle />
                 {title && (
                     <Head>
                         <Meta />
@@ -27,8 +28,6 @@ const Layout = ({ children, title }: any) => {
                 )}
 
                 {children}
-
-                <GridItemStyle />
             </>
         </motion.article>
     );
