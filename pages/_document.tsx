@@ -10,7 +10,6 @@ class MyDocument extends Document {
     render() {
         return (
             <Html lang="en-GB">
-                <Head />
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
@@ -30,6 +29,7 @@ class MyDocument extends Document {
                 />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <Head />
                 <body>
                     <ColorModeScript
                         initialColorMode={theme.config.initialColorMode}
