@@ -91,8 +91,10 @@ const Contact: NextPage = ({ router }: any) => {
 
         try {
             const response = await axios(config);
+            console.log("Number one");
 
             if (response.status !== 200) {
+                console.log("Number two");
                 setTimeout(() => {
                     setErrorMessage(
                         "An error has occured. Please try again later."
@@ -100,6 +102,7 @@ const Contact: NextPage = ({ router }: any) => {
                     setLoading(false);
                 }, 1500);
             } else {
+                console.log("Number three");
                 setTimeout(() => {
                     setLoading(false);
                     setEmailValue("");
