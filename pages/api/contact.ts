@@ -25,17 +25,21 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
       <p><strong>Message: </strong> ${subject} </p><br>`
     };
 
+    let errorMessage;
+
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            errorMessage = error.message;
             console.log(error);
             return res.json(error);
         } else {
+            errorMessage = null;
             console.log(`Message sent: ${info.messageId}`);
         }
     });
 
     return res.json({
-        error: null,
+        error: errorMessage,
         message: "Message sent!"
     });
 };
