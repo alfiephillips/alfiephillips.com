@@ -29,7 +29,7 @@ const Projects: NextPage = () => {
                             title="Oberen"
                             thumbnail={thumbOberen}
                         >
-                            This is sample information because I haven't
+                            This is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
                     </Section>
@@ -39,7 +39,7 @@ const Projects: NextPage = () => {
                             title="Oberen"
                             thumbnail={thumbOberen}
                         >
-                            This is sample information because I haven't
+                            This is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
                     </Section>
@@ -49,7 +49,7 @@ const Projects: NextPage = () => {
                             title="Oberen"
                             thumbnail={thumbOberen}
                         >
-                            This is sample information because I haven't
+                            This is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
                     </Section>
@@ -59,7 +59,7 @@ const Projects: NextPage = () => {
                             title="Oberen"
                             thumbnail={thumbOberen}
                         >
-                            This is sample information because I haven't
+                            This is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
                     </Section>
@@ -69,7 +69,7 @@ const Projects: NextPage = () => {
                             title="Oberen"
                             thumbnail={thumbOberen}
                         >
-                            This is sample information because I haven't
+                            This is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
                     </Section>
@@ -79,7 +79,7 @@ const Projects: NextPage = () => {
                             title="Oberen"
                             thumbnail={thumbOberen}
                         >
-                            This is sample information because I haven't
+                            This is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
                     </Section>
@@ -92,8 +92,8 @@ const Projects: NextPage = () => {
                         thumbnail={thumbOberen}
                         title="Oberen"
                     >
-                        This is sample information because I haven't completed
-                        this yet!
+                        This is sample information because I haven&apos;t
+                        completed this yet!
                     </WorkGridItem>
                 </Section>
                 <Section delay={0.3}>
@@ -102,8 +102,8 @@ const Projects: NextPage = () => {
                         thumbnail={thumbOberen}
                         title="oberen"
                     >
-                        This is sample information because I haven't completed
-                        this yet!
+                        This is sample information because I haven&apos;t
+                        completed this yet!
                     </WorkGridItem>
                 </Section>
             </Container>
