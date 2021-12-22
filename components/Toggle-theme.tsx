@@ -10,6 +10,9 @@ const ToggleTheme = ({ router }: any) => {
     const { toggleColorMode } = useColorMode();
     const [playSound]: any = useSound("/sounds/click-sound.mp3");
     const pathname = router.pathname;
+    const key = useColorModeValue("light", "dark");
+    const colorScheme = useColorModeValue("purple", "orange");
+    const icon = useColorModeValue(<MoonIcon />, <SunIcon />);
 
     useEffect(() => {
         if (!isMobile) {
@@ -22,7 +25,7 @@ const ToggleTheme = ({ router }: any) => {
             {!isMobile ? (
                 <motion.div
                     style={{ display: "inline-block" }}
-                    key={useColorModeValue("light", "dark")}
+                    key={key}
                     initial={{ x: 400, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -1000, opacity: 0 }}
@@ -33,15 +36,15 @@ const ToggleTheme = ({ router }: any) => {
                 >
                     <IconButton
                         aria-label="Toggle theme"
-                        colorScheme={useColorModeValue("purple", "orange")}
-                        icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+                        colorScheme={colorScheme}
+                        icon={icon}
                         onClick={toggleColorMode}
                     />
                 </motion.div>
             ) : (
                 <motion.div
                     style={{ display: "inline-block" }}
-                    key={useColorModeValue("light", "dark")}
+                    key={key}
                     initial={{ y: -20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 20, opacity: 0 }}
@@ -52,8 +55,8 @@ const ToggleTheme = ({ router }: any) => {
                 >
                     <IconButton
                         aria-label="Toggle theme"
-                        colorScheme={useColorModeValue("purple", "orange")}
-                        icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
+                        colorScheme={colorScheme}
+                        icon={icon}
                         onClick={toggleColorMode}
                     />
                 </motion.div>
