@@ -34,18 +34,19 @@ const Home: NextPage = () => {
                 borderRadius="lg"
                 bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
                 mb={6}
+                mt={6}
                 p={3}
                 align="center"
             >
-                Hi! I&apos;m a backend developer based in the UK.
+                Backend Developer based in the United Kingdom.
             </Box>
 
             <Box display={{ md: "flex" }}>
                 <Box flexGrow={1}>
                     <Heading as="h2" variant="page-title">
-                        Alfie Jay Phillips
+                        Alfie Phillips
                     </Heading>
-                    <p>Young Entrepreneur ( Trader-Developer-Gamer )</p>
+                    <Paragraph fontSize="16">Young Entrepreneur</Paragraph>
                 </Box>
                 <Box
                     flexShrink={0}
@@ -70,7 +71,7 @@ const Home: NextPage = () => {
                     Work
                 </Heading>
                 <Paragraph>
-                    Alfie is a 16 year-old freelance developer based in the
+                    Alfie is a 16 year-old freelance developer from the
                     South-West of England with a passion for building new
                     innovations. He aspires to become a full-time backend
                     developer and join into the craze of Software Development:
