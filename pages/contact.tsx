@@ -63,7 +63,7 @@ const Contact: NextPage = ({ router }: any) => {
         <Layout title="Contact">
             <Container mt={5} mb={5}>
                 <Heading as="h2" variant="page-title" mt={5}>
-                    Contact me
+                    contact me
                 </Heading>
                 <Paragraph>
                     Email me using the form below about any enquiries you may
@@ -72,7 +72,7 @@ const Contact: NextPage = ({ router }: any) => {
                 </Paragraph>
                 <form>
                     <FormControl mt={5}>
-                        <FormLabel htmlFor="email">Email address</FormLabel>
+                        <FormLabel htmlFor="email">email address</FormLabel>
                         <Input
                             id="email"
                             type="email"
@@ -81,18 +81,18 @@ const Contact: NextPage = ({ router }: any) => {
                                 "whiteAlpha.500",
                                 "whiteAlpha.200"
                             )}
-                            placeholder="Enter email"
+                            placeholder="your email"
                             value={emailValue}
                             onChange={handleEmailChange}
                         />
                         <FormHelperText>
                             <Text color={emailEntered ? "green" : "red"}>
-                                {emailEntered ? "Valid" : "Invalid"}
+                                {emailEntered ? "valid" : "invalid"}
                             </Text>
-                            Email must be validated and real.
+                            email must be validated and real.
                         </FormHelperText>
                         <FormLabel htmlFor="subject" mt={5}>
-                            Subject
+                            subject
                         </FormLabel>
                         <Textarea
                             isDisabled={!emailEntered}
@@ -103,15 +103,15 @@ const Contact: NextPage = ({ router }: any) => {
                                 "whiteAlpha.500",
                                 "whiteAlpha.200"
                             )}
-                            placeholder="Your message"
+                            placeholder="your message"
                             value={subjectValue}
                             onChange={handleSubjectChange}
                         ></Textarea>
                         <FormHelperText>
                             <Text color={submit ? "green" : "red"}>
-                                {submit ? "Valid" : "Invalid"}
+                                {submit ? "valid" : "invalid"}
                             </Text>
-                            Subject must be above 25 characters and below 500
+                            subject must be above 25 characters and below 500
                             characters.
                         </FormHelperText>
                         <Box my={5} align="center">
@@ -120,7 +120,7 @@ const Contact: NextPage = ({ router }: any) => {
                                 colorScheme="teal"
                                 disabled={!submit}
                             >
-                                {!loading ? "Submit" : "Loading..."}
+                                {!loading ? "submit" : "loading..."}
                             </Button>
                         </Box>
                         {errorMessage && (

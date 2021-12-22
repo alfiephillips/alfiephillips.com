@@ -38,15 +38,15 @@ const Home: NextPage = () => {
                 p={3}
                 align="center"
             >
-                Backend Developer based in the United Kingdom.
+                backend developer based in the united kingdom.
             </Box>
 
             <Box display={{ md: "flex" }}>
                 <Box flexGrow={1}>
                     <Heading as="h2" variant="page-title">
-                        Alfie Phillips
+                        alfie phillips
                     </Heading>
-                    <Paragraph fontSize="16">Young Entrepreneur</Paragraph>
+                    <Paragraph fontSize="16">young entrepreneur</Paragraph>
                 </Box>
                 <Box
                     flexShrink={0}
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             </Box>
             <Section delay={0.2}>
                 <Heading as="h3" variant="section-title">
-                    Work
+                    work
                 </Heading>
                 <Paragraph>
                     Alfie is a 16 year-old freelance developer from the
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
                             rightIcon={<ChevronRightIcon />}
                             colorScheme="teal"
                         >
-                            My projects
+                            my projects
                         </Button>
                     </NextLink>
                 </Box>
@@ -99,7 +99,7 @@ const Home: NextPage = () => {
 
             <Section delay={0.4}>
                 <Heading as="h3" variant="section-title">
-                    Timeline
+                    timeline
                 </Heading>
                 <BioSection>
                     <BioYear>2005</BioYear>
@@ -130,7 +130,7 @@ const Home: NextPage = () => {
 
             <Section delay={0.6}>
                 <Heading as="h3" variant="section-title">
-                    Skillset
+                    skillset
                 </Heading>
                 <Paragraph>
                     These are some of my key programming languages which I use
@@ -138,30 +138,22 @@ const Home: NextPage = () => {
                 </Paragraph>
                 <Technology
                     name={
-                        <NextLink href="https://www.typescriptlang.org/">
-                            <Link>Typescript</Link>
-                        </NextLink>
+                        <Link href="https://www.typescriptlang.org/">
+                            typescript
+                        </Link>
                     }
-                    type="An amazing JS Framework"
-                    useCase="Types for Javascript: helps with documentation in your code."
+                    type="an amazing js framework"
+                    useCase="types for javascript: helps with documentation in your code."
                 />
                 <Technology
-                    name={
-                        <NextLink href="https://www.python.org">
-                            <Link>Python</Link>
-                        </NextLink>
-                    }
-                    type="Object oriented programming"
-                    useCase="A simple language which can achieve any single purpose. The best for beginners."
+                    name={<Link href="https://www.python.org">python</Link>}
+                    type="object oriented programming"
+                    useCase="a simple language which can achieve any single purpose."
                 />
                 <Technology
-                    name={
-                        <NextLink href="https://elixir-lang.org/">
-                            <Link>Elixir</Link>
-                        </NextLink>
-                    }
-                    type="Distributed systems"
-                    useCase="Constructing real-time systems that can scale out across multiple nodes."
+                    name={<Link href="https://elixir-lang.org/">elixir</Link>}
+                    type="distributed systems"
+                    useCase="constructing real-time systems that can scale out across multiple nodes."
                 />
                 <Box align="center" my={4}>
                     <NextLink href="/newsletter">
@@ -169,7 +161,7 @@ const Home: NextPage = () => {
                             rightIcon={<ChevronRightIcon />}
                             colorScheme="teal"
                         >
-                            My Newsletter
+                            my newsletter
                         </Button>
                     </NextLink>
                 </Box>
@@ -177,7 +169,7 @@ const Home: NextPage = () => {
 
             <Section delay={0.8}>
                 <Heading as="h3" variant="section-title">
-                    On the web
+                    on the web
                 </Heading>
                 <List>
                     <ListItem>

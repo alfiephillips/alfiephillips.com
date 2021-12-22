@@ -11,7 +11,7 @@ import {
 const NotFound = () => {
     return (
         <Container mt={10}>
-            <Heading as="h1">(404) Page Not Found</Heading>
+            <Heading as="h1">(404) page not found</Heading>
             <Text mt={5}>
                 The page you&apos;re looking for was not found or hasn&apos;t
                 been created yet. Please check again later...
@@ -20,7 +20,7 @@ const NotFound = () => {
 
             <Box my={5} align="center">
                 <NextLink href="/">
-                    <Button colorScheme="teal">Return home</Button>
+                    <Button colorScheme="teal">return home</Button>
                 </NextLink>
             </Box>
         </Container>

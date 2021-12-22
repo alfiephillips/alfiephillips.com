@@ -14,7 +14,7 @@ const Technology = ({ name, type, useCase }: TechnologyProps) => {
         <TechnologyContainer>
             <Column forceWidth={90}>
                 <Heading as="h4" variant="technology-title">
-                    Name
+                    name
                 </Heading>
                 <Paragraph fontSize="12" textAlign="left">
                     {name}
@@ -22,7 +22,7 @@ const Technology = ({ name, type, useCase }: TechnologyProps) => {
             </Column>
             <Column forceWidth={125}>
                 <Heading as="h4" variant="technology-title">
-                    Type
+                    type
                 </Heading>
                 <Paragraph fontSize="12" textAlign="left">
                     {type}
@@ -30,7 +30,7 @@ const Technology = ({ name, type, useCase }: TechnologyProps) => {
             </Column>
             <Column noBorder>
                 <Heading as="h4" variant="technology-title">
-                    Used for
+                    used for
                 </Heading>
                 <Paragraph fontSize="12" textAlign="left">
                     {useCase}

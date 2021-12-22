@@ -38,7 +38,7 @@ const Logo = () => {
                         fontWeight="bold"
                         ml={3}
                     >
-                        Alfie Jay Phillips
+                        alfie phillips
                     </Text>
                 </LogoBox>
             </a>
