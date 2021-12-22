@@ -16,21 +16,23 @@ import {
 } from "@chakra-ui/react";
 
 import { useState } from "react";
+
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
 import { withRouter } from "next/router";
 
 import validator from "email-validator";
 
 import Paragraph from "../components/Paragraph";
 
-import { EmailIcon } from "@chakra-ui/icons";
-
 const Contact: NextPage = ({ router }: any) => {
     const [emailEntered, setEmailEntered] = useState(false);
     const [submit, setSubmit] = useState(false);
-    const [emailValue, setEmailValue] = useState("");
-    const [subjectValue, setSubjectValue] = useState("");
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+
+    const { register, handleSubmit } = useForm();
 
     const handleEmailChange = (event: any) => {
         event.preventDefault();
@@ -38,10 +40,8 @@ const Contact: NextPage = ({ router }: any) => {
 
         if (validator.validate(email)) {
             setEmailEntered(true);
-            setEmailValue(email);
         } else {
             setEmailEntered(false);
-            setEmailValue(email);
         }
     };
 
@@ -52,10 +52,45 @@ const Contact: NextPage = ({ router }: any) => {
 
         if (strippedSubject.length < 500 && strippedSubject.length > 25) {
             setSubmit(true);
-            setSubjectValue(subject);
         } else {
             setSubmit(false);
-            setSubjectValue(subject);
+        }
+    };
+
+    const onSubmitForm = async (values: any) => {
+        const config: any = {
+            method: "POST",
+            url: "http://localhost:3000/api/contact",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: values
+        };
+
+        setLoading(true);
+
+        if (!validator.validate(values.email)) {
+            setErrorMessage("You must enter a valid email!");
+            return;
+        }
+
+        if (
+            values.subject.replace(" ", "").length > 500 &&
+            values.subject.replace(" ", "").length < 25
+        ) {
+            setErrorMessage(
+                "You must enter a valid amount of characters in your message"
+            );
+            return;
+        }
+
+        try {
+            const response = await axios(config);
+            setLoading(false);
+            console.log(response);
+        } catch (err: any) {
+            setErrorMessage(err.message);
+            setLoading(false);
         }
     };
 
@@ -70,7 +105,7 @@ const Contact: NextPage = ({ router }: any) => {
                     have. Alternatively you can contact me by twitter. (This
                     feature is still in development)
                 </Paragraph>
-                <form>
+                <form onSubmit={handleSubmit(onSubmitForm)}>
                     <FormControl mt={5}>
                         <FormLabel htmlFor="email">email address</FormLabel>
                         <Input
@@ -82,8 +117,10 @@ const Contact: NextPage = ({ router }: any) => {
                                 "whiteAlpha.200"
                             )}
                             placeholder="your email"
-                            value={emailValue}
-                            onChange={handleEmailChange}
+                            {...register("email", {
+                                required: "This is required",
+                                onChange: e => handleEmailChange(e)
+                            })}
                         />
                         <FormHelperText>
                             <Text color={emailEntered ? "green" : "red"}>
@@ -104,8 +141,10 @@ const Contact: NextPage = ({ router }: any) => {
                                 "whiteAlpha.200"
                             )}
                             placeholder="your message"
-                            value={subjectValue}
-                            onChange={handleSubjectChange}
+                            {...register("subject", {
+                                required: "This is required",
+                                onChange: e => handleSubjectChange(e)
+                            })}
                         ></Textarea>
                         <FormHelperText>
                             <Text color={submit ? "green" : "red"}>
