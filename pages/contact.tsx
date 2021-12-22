@@ -92,6 +92,7 @@ const Contact: NextPage = ({ router }: any) => {
         try {
             const response = await axios(config);
             console.log("Number one");
+            console.log(response);
 
             if (response.status !== 200) {
                 console.log("Number two");
