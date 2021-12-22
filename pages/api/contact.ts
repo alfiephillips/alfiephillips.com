@@ -8,11 +8,14 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
-        port: 587,
+        port: 465,
         secure: true,
         auth: {
             user: user_email,
             pass: user_password
+        },
+        tls: {
+            ciphers: "SSLv3"
         }
     });
 
@@ -26,20 +29,21 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     };
 
     let errorMessage;
+    let message;
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             errorMessage = error.message;
-            console.log(error);
-            return res.json(error);
+            message = "Failure";
         } else {
-            errorMessage = null;
+            message = "Successful!";
+            errorMessage = "None";
             console.log(`Message sent: ${info.messageId}`);
         }
     });
 
     return res.json({
         error: errorMessage,
-        message: "Message sent!"
+        message: message
     });
 };
