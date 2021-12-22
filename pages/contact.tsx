@@ -28,7 +28,9 @@ import Paragraph from "../components/Paragraph";
 
 const Contact: NextPage = ({ router }: any) => {
     const [emailEntered, setEmailEntered] = useState(false);
+    const [emailValue, setEmailValue] = useState("");
     const [submit, setSubmit] = useState(false);
+    const [subjectValue, setSubjectValue] = useState("");
     const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -37,6 +39,7 @@ const Contact: NextPage = ({ router }: any) => {
     const handleEmailChange = (event: any) => {
         event.preventDefault();
         const email = event.target.value;
+        setEmailValue(email);
 
         if (validator.validate(email)) {
             setEmailEntered(true);
@@ -50,6 +53,8 @@ const Contact: NextPage = ({ router }: any) => {
         const subject: string = event.target.value;
         const strippedSubject = subject.replace(" ", "");
 
+        setSubjectValue(subject);
+
         if (strippedSubject.length < 500 && strippedSubject.length > 25) {
             setSubmit(true);
         } else {
@@ -60,7 +65,7 @@ const Contact: NextPage = ({ router }: any) => {
     const onSubmitForm = async (values: any) => {
         const config: any = {
             method: "POST",
-            url: "http://localhost:3000/api/contact",
+            url: process.env.BASE_URL + "/api/contact",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -86,11 +91,29 @@ const Contact: NextPage = ({ router }: any) => {
 
         try {
             const response = await axios(config);
-            setLoading(false);
-            console.log(response);
+
+            if (response.status !== 200) {
+                setTimeout(() => {
+                    setErrorMessage(
+                        "An error has occured. Please try again later."
+                    );
+                    setLoading(false);
+                }, 1500);
+            } else {
+                setTimeout(() => {
+                    setLoading(false);
+                    setEmailValue("");
+                    setSubjectValue("");
+                    setEmailEntered(false);
+                    setSubmit(false);
+                }, 1500);
+            }
         } catch (err: any) {
-            setErrorMessage(err.message);
-            setLoading(false);
+            console.log(err);
+            setTimeout(() => {
+                setErrorMessage(err.message);
+                setLoading(false);
+            }, 1500);
         }
     };
 
@@ -121,6 +144,7 @@ const Contact: NextPage = ({ router }: any) => {
                                 required: "This is required",
                                 onChange: e => handleEmailChange(e)
                             })}
+                            value={emailValue}
                         />
                         <FormHelperText>
                             <Text color={emailEntered ? "green" : "red"}>
@@ -145,6 +169,7 @@ const Contact: NextPage = ({ router }: any) => {
                                 required: "This is required",
                                 onChange: e => handleSubjectChange(e)
                             })}
+                            value={subjectValue}
                         ></Textarea>
                         <FormHelperText>
                             <Text color={submit ? "green" : "red"}>
