@@ -1,10 +1,21 @@
 import { AnimatePresence, motion } from "framer-motion";
-import useSound from "use-sound";
 import { IconButton, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { withRouter } from "next/router";
+import useSound from "use-sound";
+import { useEffect } from "react";
+import { isMobile } from "react-device-detect";
 
-const ToggleTheme = () => {
+const ToggleTheme = ({ router }: any) => {
     const { toggleColorMode } = useColorMode();
+    const [playSound]: any = useSound("/sounds/click-sound.mp3");
+    const pathname = router.pathname;
+
+    useEffect(() => {
+        if (!isMobile) {
+            playSound();
+        }
+    }, [pathname]);
 
     return (
         <AnimatePresence exitBeforeEnter initial={false}>
@@ -14,7 +25,10 @@ const ToggleTheme = () => {
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.2 }}
+                onClick={() => {
+                    playSound();
+                }}
             >
                 <IconButton
                     aria-label="Toggle theme"
@@ -27,4 +41,4 @@ const ToggleTheme = () => {
     );
 };
 
-export default ToggleTheme;
+export default withRouter(ToggleTheme);
