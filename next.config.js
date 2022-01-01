@@ -2,8 +2,7 @@
 module.exports = {
     reactStrictMode: true,
     env: {
-        USER_EMAIL: process.env.user,
-        USER_PASSWORD: process.env.pass,
+        API_KEY: process.env.api_key,
         BASE_URL: process.env.base_url
     }
 };
