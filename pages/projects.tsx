@@ -160,7 +160,7 @@ const Projects: NextPage = () => {
                     </Section>
                 </SimpleGrid>
                 <Box align="center" my={4}>
-                    <NextLink href="https://github.com">
+                    <NextLink href="https://github.com/alfiephillips">
                         <Button
                             rightIcon={<ChevronRightIcon />}
                             colorScheme="teal"
