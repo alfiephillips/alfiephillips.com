@@ -14,9 +14,12 @@ import {
     Icon
 } from "@chakra-ui/react";
 
-import Section from "../components/Section";
-import Paragraph from "../components/Paragraph";
-import Technology from "../components/Technology";
+import dynamic from "next/dynamic";
+
+const Section = dynamic(() => import("../components/Section"));
+const Paragraph = dynamic(() => import("../components/Paragraph"));
+const Technology = dynamic(() => import("../components/Technology"));
+
 import { BioSection, BioYear } from "../components/Bio";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
