@@ -17,6 +17,7 @@ const SEO = (props: any) => {
                 content={props.description}
             />
             <meta property="og:url" content={props.url} />
+            <meta property="og:image" content={props.image} />
             <meta name="twitter:card" content={props.description} />
             <meta name="twitter:title" content={props.title} />
             <meta name="twitter:description" content={props.description} />

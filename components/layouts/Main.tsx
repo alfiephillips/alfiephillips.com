@@ -8,6 +8,7 @@ const Main = ({ children, router }: any) => {
                 title="Alfie Phillips"
                 description="Hi! I'm Alfie - a 16 year old software engineer based in the UK. Welcome to my portfolio website."
                 url="https://alfiephillips.com"
+                image="/profile.png"
                 keywords="personal website, mail@alfiephillips.com, portfolio, software engineer, programming"
             />
             <Navbar path={router.asPath} />

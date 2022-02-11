@@ -11,10 +11,12 @@ import {
     Box,
     Button
 } from "@chakra-ui/react";
-import Paragraph from "../components/Paragraph";
+
+const Paragraph = dynamic(() => import("../components/Paragraph"));
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import thumbOberen from "../public/images/oberen-thumbnail.png";
+import dynamic from "next/dynamic";
 
 const Projects: NextPage = () => {
     return (
@@ -47,7 +49,7 @@ const Projects: NextPage = () => {
                             completed this yet!
                         </WorkGridItem>
                     </Section>
-                    <Section delay={0.2}>
+                    {/* <Section delay={0.2}>
                         <WorkGridItem
                             id="oberen"
                             title="oberen"
@@ -96,9 +98,9 @@ const Projects: NextPage = () => {
                             this is sample information because I haven&apos;t
                             completed this yet!
                         </WorkGridItem>
-                    </Section>
+                    </Section> */}
                 </SimpleGrid>
-                <Section delay={0.7}>
+                {/* <Section delay={0.7}>
                     <Divider my={6} />
 
                     <Heading as="h3" fontSize={20} mb={4}>
@@ -158,7 +160,7 @@ const Projects: NextPage = () => {
                             completed this yet!
                         </WorkGridItem>
                     </Section>
-                </SimpleGrid>
+                </SimpleGrid> */}
                 <Box align="center" my={4}>
                     <NextLink href="https://github.com">
                         <Button

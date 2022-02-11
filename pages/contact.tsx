@@ -23,8 +23,9 @@ import axios from "axios";
 import { withRouter } from "next/router";
 
 import validator from "email-validator";
+import dynamic from "next/dynamic";
 
-import Paragraph from "../components/Paragraph";
+const Paragraph = dynamic(() => import("../components/Paragraph"));
 
 const Contact: NextPage = ({ router }: any) => {
     const [emailEntered, setEmailEntered] = useState(false);
@@ -100,7 +101,6 @@ const Contact: NextPage = ({ router }: any) => {
                     setLoading(false);
                 }, 1500);
             } else {
-                console.log("Number three");
                 setTimeout(() => {
                     setLoading(false);
                     setEmailValue("");
