@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import NextLink from "next/link";
-import Layout from "../components/layouts/Article";
-import Section from "../components/Section";
-import { WorkGridItem } from "../components/GridItem";
+import Layout from "../../components/layouts/Article";
+import Section from "../../components/Section";
+import { WorkGridItem } from "../../components/GridItem";
 import {
     Container,
     Heading,
@@ -12,10 +12,10 @@ import {
     Button
 } from "@chakra-ui/react";
 
-const Paragraph = dynamic(() => import("../components/Paragraph"));
+const Paragraph = dynamic(() => import("../../components/Paragraph"));
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import thumbOberen from "../public/images/oberen-thumbnail.png";
+import thumbOberen from "../../public/images/oberen-thumbnail.png";
 import dynamic from "next/dynamic";
 
 const Projects: NextPage = () => {

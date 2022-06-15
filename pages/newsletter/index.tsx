@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import Layout from "../components/layouts/Article";
+import Layout from "../../components/layouts/Article";
 import {
     Container,
     Heading,
