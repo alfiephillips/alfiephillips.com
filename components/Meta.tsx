@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Redirect from "next/router";
 
 const SEO = (props: any) => {
     return (
