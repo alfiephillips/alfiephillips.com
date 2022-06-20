@@ -33,16 +33,17 @@ export const getStaticPaths = async () => {
     };
 };
 
-const Project: NextPage = ({ data, found }: any) => {
+const Project: NextPage = ({ project, found }: any) => {
     if (!found) {
         return <ErrorPage statusCode={404} />;
     } else {
+        const { title, description, startDate, tags, file } = project;
         return (
             <Container mt={5} mb={5}>
                 <h1>
                     <b>This page is in development</b>
                 </h1>
-                Page for the project: {data.title}
+                Page for the project: {title}
             </Container>
         );
     }
