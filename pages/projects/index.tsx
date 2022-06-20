@@ -19,6 +19,8 @@ import thumbOberen from "../../public/images/oberen-thumbnail.png";
 import { getData } from "../../libs/getData";
 import dynamic from "next/dynamic";
 
+const images = [thumbOberen];
+
 const Projects: NextPage = (props: any) => {
     return (
         <Layout title="Projects">
@@ -40,18 +42,20 @@ const Projects: NextPage = (props: any) => {
                 </Section>
 
                 <SimpleGrid columns={[1, 1, 1]} gap={6}>
-                    <Section delay={0.1}>
-                        <WorkGridItem
-                            id="oberen"
-                            title={props.title}
-                            startDate={props.startDate}
-                            endDate={props.endDate}
-                            tags={props.tags}
-                            thumbnail={thumbOberen}
-                        >
-                            {props.description}
-                        </WorkGridItem>
-                    </Section>
+                    {props.projects.map((item: any, index: number) => {
+                        return (
+                            <WorkGridItem
+                                key={index}
+                                id={item.title}
+                                title={item.title}
+                                startDate={item.startDate}
+                                tags={item.tags}
+                                thumbnail={images[index]}
+                            >
+                                {item.description}
+                            </WorkGridItem>
+                        );
+                    })}
                 </SimpleGrid>
                 <Box align="center" my={4}>
                     <NextLink href="https://github.com/alfiephillips">
@@ -69,10 +73,12 @@ const Projects: NextPage = (props: any) => {
 };
 
 export async function getStaticProps() {
-    const data = await getData("projects", "oberen");
+    const data = await getData("projects", "*");
 
     return {
-        props: data
+        props: {
+            projects: Object.values(data)
+        }
     };
 }
 

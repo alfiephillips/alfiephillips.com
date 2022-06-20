@@ -15,7 +15,6 @@ interface GridItemProps {
     id: string;
     title: string;
     startDate: string;
-    endDate: string;
     tags: string[];
     thumbnail: StaticImageData;
 }
@@ -45,7 +44,6 @@ export const WorkGridItem = ({
     id,
     title,
     startDate,
-    endDate,
     tags,
     thumbnail
 }: GridItemProps) => {
