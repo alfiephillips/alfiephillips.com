@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import ErrorPage from "next/error";
 import Layout from "../../components/layouts/Article";
+import markdownToHtml from "../../libs/markdownToHtml";
 
 import {
     Container,
@@ -10,10 +11,12 @@ import {
     Divider,
     Box,
     Button,
-    useColorModeValue
+    useColorModeValue,
+    TagRightIcon
 } from "@chakra-ui/react";
 import { NextPage } from "next";
 import { getData, getAllSlugs } from "../../libs/getData";
+import { Link } from "@chakra-ui/react";
 
 const Paragraph = dynamic(() => import("../../components/Paragraph"));
 
@@ -33,7 +36,8 @@ export const getStaticProps = async ({ params }: any) => {
         return {
             props: {
                 found: true,
-                data
+                data,
+                html: await markdownToHtml(data.file)
             }
         };
     }
@@ -47,11 +51,12 @@ export const getStaticPaths = async () => {
     };
 };
 
-const Project: NextPage = ({ data, found }: any) => {
+const Project: NextPage = ({ found, data, html }: any) => {
     if (!found) {
         return <ErrorPage statusCode={404} />;
     } else {
-        const { title, description, startDate, tags, file } = data;
+        const { title, description, startDate, tags } = data;
+
         return (
             <Layout title={title}>
                 <Container mt={5} mb={5}>
@@ -61,13 +66,16 @@ const Project: NextPage = ({ data, found }: any) => {
                     <Text
                         fontSize={16}
                         textAlign="left"
-                        fontWeight={100}
+                        fontWeight={400}
                         mt={2.5}
                         mb={2.5}
                     >
                         <span
                             style={{
-                                borderLeft: "1px solid white",
+                                borderLeft: useColorModeValue(
+                                    "1px solid black",
+                                    "1px solid white"
+                                ),
                                 paddingLeft: "4px",
                                 paddingRight: "4px"
                             }}
@@ -76,6 +84,42 @@ const Project: NextPage = ({ data, found }: any) => {
                         </span>
                     </Text>
                     <Paragraph>{description}</Paragraph>
+                    <Divider my={6} />
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                    <Divider my={6} />
+                    <Heading as="h3" fontSize={20} mb={4}>
+                        tags
+                    </Heading>
+                    <SimpleGrid columns={[1, 1, 1]} gap={1}>
+                        {tags
+                            .map((tag: any, index: number) => {
+                                console.log(tag);
+                                return (
+                                    <Paragraph>
+                                        <Box
+                                            key={index}
+                                            as="span"
+                                            display="inline-block"
+                                            fontSize={14}
+                                            fontWeight={500}
+                                            color={useColorModeValue(
+                                                "#3d7aed",
+                                                "#ff63c3"
+                                            )}
+                                            cursor="pointer"
+                                        >
+                                            <Link
+                                                href={tag.link}
+                                                target="_blank"
+                                            >
+                                                #{tag.name}
+                                            </Link>
+                                        </Box>
+                                    </Paragraph>
+                                );
+                            })
+                            .reverse()}
+                    </SimpleGrid>
                 </Container>
             </Layout>
         );

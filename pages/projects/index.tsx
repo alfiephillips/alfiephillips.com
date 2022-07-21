@@ -16,10 +16,11 @@ const Paragraph = dynamic(() => import("../../components/Paragraph"));
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import thumbOberen from "../../public/images/oberen-thumbnail.png";
+import thumb7Wives from "../../public/images/7wives-thumbnail.png";
 import { getData } from "../../libs/getData";
 import dynamic from "next/dynamic";
 
-const images = [thumbOberen];
+const images = [thumbOberen, thumb7Wives];
 
 const Projects: NextPage = (props: any) => {
     return (

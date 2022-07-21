@@ -3,8 +3,8 @@ import { ColorModeScript } from "@chakra-ui/react";
 import theme from "../libs/theme";
 class MyDocument extends Document {
     static async getInitialProps(ctx: any) {
-        const initalProps = await Document.getInitialProps(ctx);
-        return { ...initalProps };
+        const initialProps = await Document.getInitialProps(ctx);
+        return { ...initialProps };
     }
 
     render() {
