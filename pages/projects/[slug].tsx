@@ -56,6 +56,12 @@ const Project: NextPage = ({ found, data, html }: any) => {
         return <ErrorPage statusCode={404} />;
     } else {
         const { title, description, startDate, tags } = data;
+        const borderColor = useColorModeValue(
+            "1px solid black",
+            "1px solid white"
+        );
+
+        const textColor = useColorModeValue("#3d7aed", "#ff63c3");
 
         return (
             <Layout title={title}>
@@ -72,10 +78,7 @@ const Project: NextPage = ({ found, data, html }: any) => {
                     >
                         <span
                             style={{
-                                borderLeft: useColorModeValue(
-                                    "1px solid black",
-                                    "1px solid white"
-                                ),
+                                borderLeft: borderColor,
                                 paddingLeft: "4px",
                                 paddingRight: "4px"
                             }}
@@ -102,10 +105,7 @@ const Project: NextPage = ({ found, data, html }: any) => {
                                             display="inline-block"
                                             fontSize={14}
                                             fontWeight={500}
-                                            color={useColorModeValue(
-                                                "#3d7aed",
-                                                "#ff63c3"
-                                            )}
+                                            color={textColor}}
                                             cursor="pointer"
                                         >
                                             <Link
