@@ -105,7 +105,7 @@ const Project: NextPage = ({ found, data, html }: any) => {
                                             display="inline-block"
                                             fontSize={14}
                                             fontWeight={500}
-                                            color={textColor}}
+                                            color={textColor}
                                             cursor="pointer"
                                         >
                                             <Link
