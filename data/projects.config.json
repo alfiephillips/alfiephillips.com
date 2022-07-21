@@ -3,8 +3,44 @@
         "title": "oberen",
         "description": "My first business idea. I'm envious that one day this may become a thriving organisation; used for physical and virtual employment of those struggling to find a job.",
         "startDate": "27th June 2021",
-        "endDate": "Present",
-        "tags": ["typescript", "react", "docker"],
+        "tags": [
+            {
+                "name": "typescript",
+                "link": "https://typecript.org"
+            },
+            {
+                "name": "react",
+                "link": "https://reactjs.org"
+            },
+            {
+                "name": "docker",
+                "link": "https://docker.com"
+            }
+        ],
         "file": "oberen.md"
+    },
+    "7wives": {
+        "title": "7wives",
+        "description": "Cocktail and Champagne bar located in St Ives, Cornwall",
+        "startDate": "11th July 2022",
+        "tags": [
+            {
+                "name": "website",
+                "link": "https://7wives.bar"
+            },
+            {
+                "name": "wordpress",
+                "link": "https://wordpress.com"
+            },
+            {
+                "name": "elementor",
+                "link": "https://elementor.com"
+            },
+            {
+                "name": "html",
+                "link": "https://html.com"
+            }
+        ],
+        "file": "7wives.md"
     }
 }

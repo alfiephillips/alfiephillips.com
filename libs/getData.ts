@@ -9,7 +9,12 @@ const getData = async (filename: string, slug: string): Promise<any> => {
 
     const jsonData = await fsPromises.readFile(filePath, "utf8");
     const data = JSON.parse(jsonData);
-    return data[slug];
+
+    if (slug === "*") {
+        return data;
+    } else {
+        return data[slug];
+    }
 };
 
 const getAllSlugs = async (filename: string): Promise<string[]> => {
